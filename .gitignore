@@ -1,0 +1,4 @@
+
+backend/setting.ini
+*.pyc
+.vscode/settings.json
