@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Passenger</h1>
+{% for table in tables %}
+  {{ table|safe }}
+{% endfor %} 
+<hr>
+    <h1>Add New passenger</h1>
+    <form method="POST" action="/addpass">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name(size=20) }}<br>
+        {{ form.flightid.label }} {{ form.flightid(size=2) }}<br>
+        <input type="submit" value="add new passenger">
+    </form>
+
+  <hr>
+  <br>
+  <a href="{{ url_for('main') }}">Home</a>
+  {% endblock %}

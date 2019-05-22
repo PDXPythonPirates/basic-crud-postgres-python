@@ -1,0 +1,8 @@
+<h1>Passenger</h1>
+{% for table in tables %}
+  {{ table|safe }}
+{% endfor %}
+<a href="url_for('/addpass')">Add new Passenger</a>
+<br>
+
+<a href="{{ url_for('main') }}">Home</a>

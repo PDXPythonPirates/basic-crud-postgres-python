@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Flights:</h1>
+{% for table in tables %}
+  {{ table|safe }}
+{% endfor %}
+<br>
+<a href="{{ url_for('gfm') }}">Get Flight Manifest</a>
+<br>
+<h1>Passengers:</h1>
+{% for table2 in tables2 %}
+  {{ table2|safe }}
+{% endfor %}
+<br>
+<a href="{{ url_for('gpm') }}">Get Passenger Manifest</a>
+<br>
+<a href="{{ url_for('addpass') }}">Add new Passenger</a>
+<br>
+<a href="{{ url_for('deletepass') }}">Delete Passenger</a>
+{% endblock %}

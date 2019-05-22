@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Passenger</h1>
+{% for table in tables %}
+  {{ table|safe }}
+{% endfor %} 
+<hr>
+    <h1>Delete passenger</h1>
+    <form method="POST" action="/deletepass">
+        {{ form.hidden_tag() }}
+        {{ form.id.label }} {{ form.id(size=2) }}<br>
+        <input type="submit" value="delete passenger">
+    </form>
+
+  <hr>
+  <br>
+  <a href="{{ url_for('main') }}">Home</a>
+  {% endblock %}
